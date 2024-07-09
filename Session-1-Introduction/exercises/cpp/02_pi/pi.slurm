@@ -10,11 +10,11 @@
 
 # ================ optional OMP - settings (thread pinning)
 # thread-placement options: cores, threads, sockets
-# export OMP_PLACES=cores 
+export OMP_PLACES=cores 
 # echo Thread Placement: ${OMP_PLACES}
 
 # thread-binding options: close, spread
-# export OMP_PROC_BIND=close
+export OMP_PROC_BIND=close
 # echo Thread Binding Policy: ${OMP_PROC_BIND}
 
 # =============== Run with different no of threads

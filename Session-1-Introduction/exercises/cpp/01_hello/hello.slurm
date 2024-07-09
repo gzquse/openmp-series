@@ -10,16 +10,17 @@
 
 # ================ optional OMP - settings (thread pinning)
 # thread-placement options: cores, threads, sockets
-# export OMP_PLACES=cores 
-# echo Thread Placement: ${OMP_PLACES}
+export OMP_PLACES=cores 
+echo Thread Placement: ${OMP_PLACES}
 
 # thread-binding options: close, spread
-# export OMP_PROC_BIND=close
-# echo Thread Binding Policy: ${OMP_PROC_BIND}
+# allow threads to migrate between different cores
+export OMP_PROC_BIND=close
+echo Thread Binding Policy: ${OMP_PROC_BIND}
 
 # =============== Run with different no of threads
 #NTHREADS="1 2 3 4 6 8 12 16 24 32 40 48"
-NTHREADS="1 2 4 8"
+NTHREADS=$(seq 1 2 48)
 for i in $NTHREADS
 do
     echo Number of Threads = $i
